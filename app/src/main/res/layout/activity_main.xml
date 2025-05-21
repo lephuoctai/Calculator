@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
+        android:layout_weight="1"
         app:strokeColor="@android:color/transparent"
         app:cardCornerRadius="10dp"
         >
@@ -40,7 +41,7 @@
                 android:id="@+id/label_ouput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24sp"
+                android:layout_marginTop="24dp"
                 android:labelFor="@id/calc_input_show"
                 android:text="Nhập phép tính"
                 android:textSize="20sp" />
@@ -124,6 +125,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="36dp"
         app:strokeColor="@android:color/transparent"
         app:cardCornerRadius="10dp" >
 
@@ -135,6 +137,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
+                android:gravity="start|center"
                 android:orientation="horizontal">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -143,15 +146,46 @@
                     android:gravity="start|center"
                     android:text="Lịch sử: "
                     android:textSize="20sp" />
+
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="190dp"
+                    android:id="@+id/calc_history1"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:maxLength="15"
                     android:gravity="start|center"
+                    android:maxLength="5"
                     android:paddingHorizontal="8dp"
-                    android:text="12373.977"
+                    android:hint="0.00"
                     android:textSize="20sp" />
-        </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="36dp"
+                    android:background="@color/black"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/calc_history2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:maxLength="5"
+                    android:paddingHorizontal="8dp"
+                    android:hint="0.00"
+                    android:textSize="20sp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="36dp"
+                    android:background="@color/black"
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/calc_history3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:maxLength="5"
+                    android:paddingHorizontal="8dp"
+                    android:hint="0.00"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1.2dp"

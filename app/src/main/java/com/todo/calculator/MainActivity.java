@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public void calculator() {
         // Nút số (0 - 9)
         ArrayList<CalcButton> butttonArray = new ArrayList<>();
+        String historyList[] = {"0","0","0"};
         int[] numberButtonIds = {
                 R.id.calc_btn_0, R.id.calc_btn_1, R.id.calc_btn_2,
                 R.id.calc_btn_3, R.id.calc_btn_4, R.id.calc_btn_5,
@@ -134,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
         // Màn hình hiển thị
         EditText inputShow     = findViewById(R.id.calc_input_show);
         TextView outputShow    = findViewById(R.id.calc_output_show);
+        TextView historyShow[] = {
+            findViewById(R.id.calc_history1),
+            findViewById(R.id.calc_history2),
+            findViewById(R.id.calc_history3),
+        };
 
 //Xu ly click
         for (CalcButton button: butttonArray) {
@@ -184,9 +190,14 @@ public class MainActivity extends AppCompatActivity {
 
             //calc
             Double result = calcProccess(slideString);
-
+            historyList[2]= historyList[1];
+            historyList[1]= historyList[0];
+            historyList[0]= String.format("%.3g", result);
             //out
-            outputShow.setText(result.toString());
+            for(int i = 0; i < 3 ; ++i) {
+                historyShow[i].setText(historyList[i]);
+            }
+            outputShow.setText(String.format("%.5g", result));
         });
     }
 
